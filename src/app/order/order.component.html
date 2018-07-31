@@ -1,0 +1,31 @@
+<div class="label-container" >
+    <div class="label-border">
+        <div class="label-section">
+            <label class="label-to">SHIP TO</label>
+            <div class="label-address">
+              <span>{{orderInfo.address.name}},</span>
+              <span>{{orderInfo.address.address}},</span>
+              <span>{{orderInfo.address.city}}, {{orderInfo.address.state}} {{orderInfo.address.zip}}</span>
+                <!-- <span>{{shippingInfo.to.name}},</span>
+                <span>{{shippingInfo.to.address}},</span>
+                <span>{{shippingInfo.to.city+', '+shippingInfo.to.state+' '+shippingInfo.to.zip}},</span> -->
+            </div>
+        </div>
+        <div class="label-section">
+            <!-- <label class="label-to">WEIGHT</label>
+            <div class="label-address cntr">
+                <span>{{shippingInfo.weight}} LBS</span>
+            </div> -->
+            <label class="label-to">DELIVERY TYPE</label>
+            <div class="label-address cntr">
+                <span >{{orderInfo.shippingOption}}</span>
+                <!-- <span *ngIf="shippingInfo.shippingOption==1">Priority</span> -->
+            </div>
+        </div>
+        <div class="label-section">
+            <div class="label-address cntr">
+                <img src="https://www.barcodegraphics.com/images/QRbarcodeSmalllwr2.png" />
+            </div>
+        </div>
+    </div>
+</div>

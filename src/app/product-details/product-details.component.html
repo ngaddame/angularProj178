@@ -1,0 +1,25 @@
+<div>
+<div class="row" *ngIf="!!productDetail">
+        <div style="width:50%;padding-top:20px;">
+            <mat-card fxFlex="60%" fxFlex.xs="80%"style="padding:0px !important" >
+                <div style="width:100%">
+                    <img style="width:100%" src="assets/images/{{productDetail.url}}.jpg" >
+                </div>
+            </mat-card>
+        </div>
+        <div style="width:50%;padding-top:40px;">
+        <h5>{{productDetail.name}}</h5>
+        <!-- <div> <app-rating [rating]='productDetail.rating'></app-rating></div> -->
+        <h5>{{productDetail.price}}</h5>
+        <div style="padding-top:20px;">
+            <button type="button" class="btn" style="background-color: #20bd99;color:white;" (click)="addToCart(productDetail);">ADD TO BAG</button>
+            <div>{{productDetail.description}}</div>
+        </div>
+        </div>
+</div>
+<div *ngIf="!productDetail">
+        <mat-progress-spinner
+        class="example-margin">
+    </mat-progress-spinner>
+</div>
+</div>

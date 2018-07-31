@@ -1,0 +1,17 @@
+.appContainer
+{
+    display: flex; justify-content: space-between;
+}
+.material-icons{
+    line-height:2;
+}
+
+.mainContainer a{
+  padding: 10px;
+}
+.sidemainContainer{
+   padding: 20px;
+}
+.sidemainContainer a{
+  padding:10px;
+}

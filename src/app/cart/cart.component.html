@@ -1,0 +1,44 @@
+<div class="row">
+        <div class="col-sm-7 col-xs-12" style="border-right:1px solid #f5f5f6;height:100%;">
+            <h5 style="padding:10px 0px;">My Shopping Bag ({{cartItems.length}})</h5>
+            <mat-card  *ngFor="let product of cartItems">
+            <div class="row">
+              <div class="col-sm-3 col-xs-3"><img mat-card-image src="assets/images/{{product.url}}.jpg" style="height:150px;max-width:150px;" ></div>
+              <div class="col-sm-9 col-xs-9">
+                    <h5> {{product.name}}</h5>
+                    <div style="font-size:19px;color:green;">{{product.price| number:'1.1-2'}}</div>
+                    <app-rating [rating]='product.rating'></app-rating>
+                    <div>{{product.description}}</div>
+              </div>
+            </div>
+            </mat-card>
+        </div>
+        <div class="col-sm-5 col-xs-12" >
+           
+                <div style="padding:20px;">
+                  <div style="padding-top:20px;">
+                     <h5>Order Summary</h5>
+                      <div class="row" style="width:100%;position:relative;" >
+                          <span >Bag Total</span>
+                          <span style="position:absolute;right:0;text-align: right;">${{getTotalPrice()| number:'1.1-2' }}</span>
+                      </div>
+                      <div class="row" style="width:100%;position:relative;" >
+                          <span >Estimated Shipping</span>
+                          <span style="position:absolute;right:0;text-align: right;">${{shippingCost}}</span>
+                      </div>
+                      <div class="row" style="width:100%;position:relative;" >
+                          <span >Tax</span>
+                          <span style="position:absolute;right:0;text-align: right;">$0</span>
+                      </div>
+                      <div class="padding-top-10px;border-top:1px solid #f5f5f6;" style="width:100%;position:relative;font-weight:bolder;font-size:13px;">
+                          <span >ORDER TOTAL</span>
+                          <span style="position:absolute;right:0;text-align: right;">${{(getTotalPrice() + shippingCost) | number:'1.1-2'}}</span>
+                      </div>
+                      <div class="padding-top-10px" >
+                          <button  class="order-btn" style="width:100%" (click)="placeOrder()">PLACE ORDER</button>
+                      </div>
+                  </div>
+                </div>
+        </div>
+        <router-outlet></router-outlet>
+</div>

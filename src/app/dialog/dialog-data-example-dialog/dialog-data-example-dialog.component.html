@@ -1,0 +1,13 @@
+<!-- <h2 mat-dialog-title>Delete all</h2>
+<mat-dialog-content>Are you sure?{{data.animal}}</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button [mat-dialog-close]="true">Yes</button>
+</mat-dialog-actions> -->
+<!-- <div>{{data|json}}</div> -->
+<div>
+    <div  (click)="close()">
+        <i class="fa fa-close" aria-hidden="true" style="font-size:26px;float:right;"></i>
+    </div>
+<app-product-details [idValue]='dataVal.id' [dialogRef]='dialogRefVal'></app-product-details>
+</div>

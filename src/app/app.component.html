@@ -1,0 +1,73 @@
+<div class="default">
+  <section style="max-width: 1170px;margin-left: auto;margin-right: auto;">
+    <app-header></app-header>
+    <!-- <app-checkout-header [currentStep]="currentStep" *ngIf="currentUrl && isCheckoutRoute()"></app-checkout-header> -->
+    <!-- <app-loading-indicator></app-loading-indicator>
+    <app-notification></app-notification> -->
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- <app-checkout-footer *ngIf="currentUrl && isCheckoutRoute()"></app-checkout-footer>
+    <app-footer *ngIf="currentUrl && !isCheckoutRoute()"></app-footer> -->
+  </section>
+</div>
+
+
+
+<!-- <div style="height: 100vh;"> -->
+
+
+
+
+  <!-- <mat-toolbar color="primary" class="appContainer">
+
+    <div>Shoppig Cart</div>
+    <div fxShow="true" fxHide.lt-md="true" class="mainContainer">
+
+
+      <a href="#" mat-button>Products</a>
+
+      <a href="#" mat-button>Order</a>
+
+      <a href="#" mat-button>Cart</a>
+
+      <a href="#" mat-button>About Us</a>
+
+    </div>
+
+    <div fxShow="true" fxHide.gt-sm="true">
+
+      <a  (click)="sidenav.toggle()">Show Side Menu</a>
+
+    </div>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill class="example-container">
+
+    <mat-sidenav #sidenav fxLayout="column">
+
+      <div fxLayout="column" class="sidemainContainer">
+
+        <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
+
+        <a href="#" mat-button>Products</a>
+
+        <a href="#" mat-button>Order</a>
+  
+        <a href="#" mat-button>Cart</a>
+  
+        <a href="#" mat-button>About Us</a>
+      </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content fxFlexFill>
+       <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+</div> -->

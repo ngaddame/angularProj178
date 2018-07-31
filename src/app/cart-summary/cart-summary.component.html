@@ -1,0 +1,37 @@
+<div >
+           
+    <div style="padding:20px;background-color:#f6f6e1 !important;">
+      <mat-card  *ngFor="let product of cart">
+        <div class="row" style="width:100%">
+          <div style="width:40%"><img mat-card-image src="assets/images/{{product.url}}.jpg" style="height:100px;width:100px;margin:0px;" ></div>
+          <div  style="padding-left:10px;width:50%;">
+                <div > {{product.name}}</div>
+                <div style="font-size:19px;color:green;">{{product.price}}</div>
+                <app-rating [rating]='product.rating'></app-rating>
+          </div>
+        </div>
+      </mat-card>
+      <div style="padding-top:20px;">
+         <h5>Order Summary</h5>
+          <div class="row" style="width:100%;position:relative;" >
+              <span >Bag Total</span>
+              <span style="position:absolute;right:0;text-align: right;">${{getTotalPrice()| number:'1.1-2'}}</span>
+          </div>
+          <div class="row" style="width:100%;position:relative;" >
+              <span >Estimated Shipping</span>
+              <span style="position:absolute;right:0;text-align: right;">${{shippingOption=='ground'?6:8}}</span>
+          </div>
+          <div class="row" style="width:100%;position:relative;" >
+              <span >Tax</span>
+              <span style="position:absolute;right:0;text-align: right;">$0</span>
+          </div>
+          <div class="padding-top-10px;border-top:1px solid #f5f5f6;" style="width:100%;position:relative;font-weight:bolder;font-size:13px;">
+              <span >ORDER TOTAL</span>
+              <span style="position:absolute;right:0;text-align: right;">${{(getTotalPrice() + (shippingOption=='ground'?6:8))| number:'1.1-2' }} </span>
+          </div>
+          <!-- <div class="padding-top-10px" >
+              <button  class="order-btn" style="width:100%" (click)="placeOrder()">PLACE ORDER</button>
+          </div> -->
+      </div>
+    </div>
+</div>

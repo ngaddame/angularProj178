@@ -1,0 +1,68 @@
+
+<div>
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #f6f6e1 !important;">
+  <a class="navbar-brand" href="#" style="font-style: italic;font-weight: bolder;color: rgba(171, 167, 33, 0.9);">Baybeee</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <div class="collapse navbar-collapse in" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar-right">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/cart']"><i class="fa fa-shopping-cart" style="font-size:24px"></i> <span class="sr-only">(current)</span></a>
+        </li>
+    </ul>
+  </div>
+</nav> -->
+<nav class="navbar navbar-expand-sm navbar-light bg-light" style="background-color: #f6f6e1 !important;border: 5px solid #6c62432e;">
+    <a class="navbar-brand" [routerLink]="['/list']" href="#" style="font-style: italic;font-weight: bolder;color: rgba(171, 167, 33, 0.9);">Baybeee</a>
+    <button class="navbar-toggler" (click)="collapse=!collapse" type="button" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="navbar-collapse" (click)="collapse=true" [hidden]="collapse">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/home']" >Home <span class="sr-only">(current)</span></a>
+            </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/list']" >Clothing <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/aboutUs']">About</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-right">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/cart']">
+              <mat-icon style="position:relative;">shopping_cart
+                <span class="badgeClass">{{cartItems.length}}</span>
+              </mat-icon>
+              <span class="sr-only">(current)</span></a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+</div>

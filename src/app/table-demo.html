@@ -1,0 +1,61 @@
+<app-product-list></app-product-list>
+
+
+<!-- <div class="row">
+        <div class="col-md-2" style="border: 1px solid black;">
+               <mat-sidenav-container fxFlexFill class="example-container">
+
+                <mat-sidenav #sidenav fxLayout="column">
+            
+                  <div fxLayout="column" class="sidemainContainer">
+            
+                    <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
+            
+                    <a href="#" mat-button>Products</a>
+            
+                    <a href="#" mat-button>Order</a>
+              
+                    <a href="#" mat-button>Cart</a>
+              
+                    <a href="#" mat-button>About Us</a>
+                  </div>
+            
+                </mat-sidenav>
+            
+                <mat-sidenav-content fxFlexFill>
+                   <router-outlet></router-outlet>
+                </mat-sidenav-content>
+            
+              </mat-sidenav-container>
+        </div>
+        <div class="col-md-10" style="border: 1px solid red;"></div>
+</div> -->
+      <!-- <br>
+      <ng-table [config]="config"
+                (tableChanged)="onChangeTable(config)"
+                (cellClicked)="onCellClick($event)"
+                 [columns]="columns">
+      </ng-table>
+      <table class="table table-bordered">
+            <tbody> 
+              <tr *ngFor="let row of rows"> 
+                  <td *ngFor="let column of columns">
+                        
+                        <div *ngIf="column.name=='name'"><a (click)= "redirectTo()" > {{row[column["name"]]}}</a>
+                        </div>
+                        <div *ngIf="column.name != 'name'">{{row[column["name"]]}}</div>
+                  </td>
+               </tr> </tbody>
+          </table>
+      <pagination *ngIf="config.paging"
+                  class="pagination-sm"
+                  [(ngModel)]="page"
+                  [totalItems]="length"
+                  [itemsPerPage]="itemsPerPage"
+                  [maxSize]="maxSize"
+                  [boundaryLinks]="true"
+                  [rotate]="false"
+                  (pageChanged)="onChangeTable(config, $event)"
+                  (numPages)="numPages = $event">
+      </pagination>
+      <pre *ngIf="config.paging" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre> -->

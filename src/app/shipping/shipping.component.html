@@ -1,0 +1,114 @@
+<div style="padding-top:20px;">
+  <div fxFlex="70%" fxFlex.xs="100%" fxFlex.sm="60%">
+      <mat-horizontal-stepper linear (selectionChange)="nextStep($event)" #stepper>
+          <mat-step [stepControl]="stepOneFormGroup">
+            <form [formGroup]="stepOneFormGroup">
+                <ng-template matStepLabel>SHIPPING</ng-template>
+                <mat-form-field class="one-line mt25">
+                    <input matInput placeholder="Full Name" type="text" formControlName="name" />
+                </mat-form-field>
+                <mat-form-field class="one-line">
+                    <input matInput placeholder="Address" type="text" formControlName="address" />
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="City" type="text" formControlName="city" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="State" formControlName="state">
+                        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Zip" type="text" formControlName="zip" />
+                </mat-form-field>
+    
+                <!-- <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div> -->
+                <div>
+                    <!-- <button mat-button matStepperPrevious type="button">Back</button> -->
+                    <button mat-button matStepperNext type="button">Next</button>
+                  </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="stepFourFormGroup">
+              <form [formGroup]="stepFourFormGroup">
+                  <ng-template matStepLabel>Options</ng-template>
+                  <label class="one-line mt25">Choose a delivery option:</label>
+                  <mat-radio-group formControlName="shippingCtrl" [(ngModel)]="shippingOption">
+                      <mat-radio-button class="one-line shipping-option" value="ground">Ground Shipping ($6)</mat-radio-button>
+                      <mat-radio-button class="one-line shipping-option" value="priority">Priority Shipping ($8)</mat-radio-button>
+                  </mat-radio-group>
+                  <div class="button-row">
+                      <button mat-raised-button matStepperPrevious>Back</button>
+                      <button mat-raised-button color="primary" matStepperNext>Next</button>
+                  </div>
+              </form>
+          </mat-step>
+          <mat-step [stepControl]="stepThreeFormGroup">
+              <form [formGroup]="stepThreeFormGroup">
+                <ng-template matStepLabel>PAYMENT</ng-template>
+                  <!-- <label class="one-line mt25">Choose a delivery option:</label> -->
+                <div>
+                  <div style="width:100%;display:inline-flex;">
+                      <div style="width:50%;border-bottom:8px solid darkblue; text-align:center;padding:10px;">
+                         PAY ON DELIVERY
+                      </div>
+                      <div style="width:50%;background-color:lightgray; text-align:center;padding:10px;opacity: 0.4;pointer-events: none;">
+                          CREDIT CARD
+                      </div>
+                  </div>
+                  <div style="padding-top:40px;">
+                      <div style="font-weight:bolder;font-size:13px;">CASH/CARD ON DELIVERY</div>
+                      <div style="color:#b7b7b7;font-size:12px;">Pay with Cash or Card when your order is delivered</div>
+                      <div style="padding-top:20px;font-size:13px;">NOTE: All authorised notes are accepted. Credit/Debit cards are also accepted.</div>
+                      <div class="padding-top-10px" >
+                          <button  class="order-btn" style="width:100%" (click)="payOnDelivery()">PAY ON DELIVERY</button>
+                      </div>
+                  </div>
+                </div>
+              </form>
+          </mat-step>
+        </mat-horizontal-stepper>
+  </div>
+  <div fxShow fxHide.xs="true" fxHide.lg="false" fxFlex="30%" fxFlex.xs="30%" fxFlex.sm="40%">
+    <app-cart-summary [cart]='cartItems' [shippingOption]="shippingOption"></app-cart-summary>
+  </div>
+</div>
+<!-- 
+    <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+        {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+      </button>
+      <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Fill out your address</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Address" formControlName="secondCtrl" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          You are now done.
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper> -->

@@ -1,0 +1,17 @@
+.aboutUs
+{
+padding:40px;
+height:700px;
+position: relative;
+}
+.imageClass{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.contentClass{
+    font-weight: 600;
+    color: rgba(87, 85, 0, 0.9);
+
+}
